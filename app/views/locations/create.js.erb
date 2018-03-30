@@ -1,4 +1,5 @@
-var newNode = document.createElement('tr');      
+var newNode = document.createElement('tr');
+newNode.id = "location_" + <%= escape_javascript(@location.id.to_s) %>      
 newNode.innerHTML = "<%= escape_javascript(render 'locations/location', location: @location) %>";
 var parent = document.getElementById("locations")
 parent.insertBefore(newNode, parent.firstChild);

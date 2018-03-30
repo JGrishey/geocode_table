@@ -1,5 +1,5 @@
 <% if !location.nil? %>
-    <tr>
+    <tr id="location_<%= location.id %>">
         <td>
             <%= location.address %>
         </td>
@@ -8,6 +8,9 @@
         </td>
         <td>
             <%= location.longitude %>
+        </td>
+        <td>
+            <%= link_to "X", location, method: :delete, data: { confirm: "Are you sure?" }, remote: true %>
         </td>
     </tr>
 <% else %>
@@ -20,6 +23,8 @@
         </td>
         <td>
             ERR
+        </td>
+        <td>
         </td>
     </tr>
 <% end %>

@@ -27,6 +27,11 @@ class LocationsController < ApplicationController
         end
     end
 
+    def destroy
+        @location = Location.find(params[:id])
+        @location.destroy
+    end
+
     private
 
     def url (address)
