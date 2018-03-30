@@ -1,0 +1,28 @@
+<div class="container">
+
+    <h1>Geocoding Table</h1>
+
+    <%= form_for(@location, remote: true, html: { class: "form" }) do |f| %>
+        <div>
+            <%= f.text_field :address, placeholder: "Enter an address", class: "text-field" %>
+            <label class="text-label">Address</label>
+        </div>
+        <%= f.submit "Geocode location", class: "submit-btn" %>
+    <% end %>
+
+    <table class="locations">
+        <thead>
+            <tr>
+                <th>Address</th>
+                <th>Latitude</th>
+                <th>Longitude</th>
+            </tr>
+        </thead>
+        <tbody id="locations">
+            <% @locations.each do |location| %>
+                <%= render location %>
+            <% end %>
+        </tbody>
+    </table>
+
+</div>

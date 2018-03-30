@@ -1,0 +1,25 @@
+<% if !location.nil? %>
+    <tr>
+        <td>
+            <%= location.address %>
+        </td>
+        <td>
+            <%= location.latitude %>
+        </td>
+        <td>
+            <%= location.longitude %>
+        </td>
+    </tr>
+<% else %>
+    <tr>
+        <td>
+            There was an error with your input. Please try again.
+        </td>
+        <td>
+            ERR
+        </td>
+        <td>
+            ERR
+        </td>
+    </tr>
+<% end %>
